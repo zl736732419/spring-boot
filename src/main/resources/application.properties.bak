@@ -1,0 +1,4 @@
+#使用Math.random设置变量参数，通过@Value注解注入结果值，容器加载时就已经确定了值，所以在此刷新也依然不会变
+name=hello
+age=${random.int(20)}
+age=${random.int[20,30]}

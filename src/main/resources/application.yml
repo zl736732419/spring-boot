@@ -1,0 +1,6 @@
+app:
+    name: zhangsan
+    age: 20
+    servers: 
+        - http://www.baidu.com
+        - http://www.tudou.com
