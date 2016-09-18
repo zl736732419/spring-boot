@@ -1,0 +1,22 @@
+app: 
+    address: http://www.baidu.com
+spring:
+    profiles:
+        active: development
+    output:
+        ansi:
+            enabled: DETECT
+logging:
+    file: test.log
+    path: D://logs
+    
+---
+spring:
+    profiles: production
+app: 
+    address: http://www.tudou.com
+---
+spring:
+    profiles: development
+app: 
+    address: http://www.taobao.com
