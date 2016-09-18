@@ -2,7 +2,7 @@ app:
     address: http://www.baidu.com
 spring:
     profiles:
-        active: development
+        active: production
     output:
         ansi:
             enabled: DETECT

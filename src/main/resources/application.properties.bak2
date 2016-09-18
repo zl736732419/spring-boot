@@ -2,9 +2,10 @@
 app.name=hello
 app.age=${random.int(20)}
 app.servers[0]=http://www.baidu.com
-app.servers[1]=http://www.tudou.com
+app.servers[1]=http://www.iteye.com
 
-spring.profiles.active=development
+spring.profiles.active=production
+
 #spring日志文件配置通过path/file两个变量互斥进行，同时配置时无效
 #logging.path=D:\\logs
 

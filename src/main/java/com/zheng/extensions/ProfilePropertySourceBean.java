@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
  * @data 2016年9月18日 上午11:17:10
  */
 @Component
-@Profile(value={"production", "development"})
+@Profile(value={"production"})
 @ConfigurationProperties(prefix = "app")
 public class ProfilePropertySourceBean {
 	private String address;
