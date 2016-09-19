@@ -18,10 +18,10 @@ import com.zheng.extensions.YamlPropertySourceBean;
 @RestController
 public class HelloController {
 
-	@Autowired
+//	@Autowired
 	private ValuePropertySourceBean value;
 
-//	@Autowired
+	@Autowired
 	private ProfilePropertySourceBean profileValue;
 	
 //	@Autowired
