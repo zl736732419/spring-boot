@@ -20,7 +20,7 @@ public class YamlFileApplicationContextInitializer
 	@Override
 	public void initialize(ConfigurableApplicationContext ctx) {
 		try {
-			Resource resource = ctx.getResource("classpath:application.yml");
+			Resource resource = ctx.getResource("classpath:application.yml.bak2");
 			YamlPropertySourceLoader loader = new YamlPropertySourceLoader();
 			PropertySource<?> source = loader.load("yamlToProp", resource, null);
 			ctx.getEnvironment().getPropertySources().addFirst(source);

@@ -1,13 +1,11 @@
 package com.zheng.web;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.zheng.extensions.ProfilePropertySourceBean;
 import com.zheng.extensions.ValuePropertySourceBean;
 import com.zheng.extensions.YamlPropertySourceBean;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 /**
  * 直接使用@RestController标识请求返回的是json格式数据
  * 所以我们无需再添加@ResponseBody注解标签
@@ -21,7 +19,7 @@ public class HelloController {
 //	@Autowired
 	private ValuePropertySourceBean value;
 
-	@Autowired
+//	@Autowired
 	private ProfilePropertySourceBean profileValue;
 	
 //	@Autowired
