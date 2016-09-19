@@ -1,5 +1,6 @@
 package com.zheng.domain;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -13,6 +14,7 @@ import javax.persistence.Id;
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@JSONField(serialize = false)
 	private Long id;
 	private String username;
 	private String password;
