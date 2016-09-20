@@ -1,15 +1,14 @@
 package com.zheng.web;
 
+import com.zheng.domain.User;
+import com.zheng.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
-import com.zheng.domain.User;
-import com.zheng.service.UserService;
-
-@RestController
+@Controller
 @RequestMapping("/user")
 public class UserController {
 
@@ -19,9 +18,15 @@ public class UserController {
 	@RequestMapping("/findUser/{userId}")
 	@ResponseBody
 	public User getUser(@PathVariable Long userId) {
-		User user = userService.getUser();
-		user.setId(userId);
-		return user;
+		return userService.getUser(userId);
+	}
+
+	@RequestMapping("/add")
+	@ResponseBody
+	public String save() {
+		User user = new User("zl", "123456", 0);
+		userService.save(user);
+		return "用户保存成功!";
 	}
 
 }
