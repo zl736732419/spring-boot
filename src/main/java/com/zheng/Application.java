@@ -7,6 +7,7 @@ import com.google.common.base.Charsets;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.HttpMessageConverters;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
@@ -16,6 +17,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 //springBootApplication的作用就相当于前面三个配置产生的作用
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = "com.zheng.repository")
+//@ServletComponentScan
 //@EnableConfigurationProperties(value={ValuePropertySourceBean.class})
 public class Application {
 
