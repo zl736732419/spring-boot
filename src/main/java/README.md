@@ -138,3 +138,45 @@
     public class Application {
     }
     
+###自定义servlet处理用户请求
+####代码注册方式
+    需要在Application.java中通过ServletRegistrationBean进行注册
+    /**
+     * 注册自定义Servlet
+     * @return
+     */
+    @Bean
+    public ServletRegistrationBean servletRegistrationBean() {
+        return new ServletRegistrationBean(new MyServlet(), "/myServlet/*");
+    }
+    
+    MyServlet.java直接编写Servlet类，不添加@WebServlet
+    
+    /**
+         * 注册自定义Servlet
+         * @return
+         */
+        @Bean
+        public ServletRegistrationBean servletRegistrationBean() {
+            return new ServletRegistrationBean(new MyServlet(), "/myServlet/*");
+        }
+####通过注解注册
+    注解注册的方式，需要在Application.java启动类上添加@ServletComponentScan扫描自定义的Servlet,Filter,Listener
+    同时自定义Servlet需要添加@WebServlet(urlPatterns = "/myServlet2/*", description = "通过注解注册")
+    
+    定义Filter,Listener与上面定义Servlet方式相同，可以参考上面Servlet的配置，注解方式Filter对应的是@WebFilter, 
+    Listener对应的是@WebListener
+###自定义拦截器
+    自定义拦截器不会处理自定义的Servlet请求，但是Filter会处理任何请求
+    1.定义拦截器类，实现HanlderInterceptor
+    2.定义MyWebMvcConfigurer,注册自定义的拦截器
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        //添加自定义拦截器
+        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**");
+
+        super.addInterceptors(registry);
+    }
+###获取参数
+    实现EnvironmentAware,可以获取到环境变量中的参数，和application.properties中配置的参数
+    可以在controller，service中实现EnvironmentAware
