@@ -32,7 +32,8 @@ public class Application {
 		 */
 //		SpringApplication ctx = new SpringApplication(Application.class);
 //		ctx.setAdditionalProfiles("production");//代码方式设置项目运行环境为生产环境，也可以直接在配置文件中制定spring.profiles.active=production
-//		ctx.setBanner(new MyBanner());
+//		ctx.setBannerMode(Banner.Mode.OFF);
+//      ctx.setBanner(new MyBanner());
 //		ctx.run(args);
 
         //链式调用

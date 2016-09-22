@@ -180,3 +180,9 @@
 ###获取参数
     实现EnvironmentAware,可以获取到环境变量中的参数，和application.properties中配置的参数
     可以在controller，service中实现EnvironmentAware
+    还可以通过@ConfigurationProperties(prefix = "spring.datasource")获取,请查看ValuePropertySourceBean.java
+    如果没有指定@Component注解注入，那么需要在Application.java中添加@EnableConfigurationProperties(value={ValuePropertySourceBean.class})
+    将类加入到spring容器中管理
+####加载自定义配置文件
+    依然通过@ConfigurationProperties来配置，但是需要指定locations参数
+    @ConfigurationProperties(prefix = "wisely",locations = "classpath:config/wisely.properties")
